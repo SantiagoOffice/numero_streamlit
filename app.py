@@ -47,9 +47,9 @@ if not all([modelo_d1, modelo_c2, modelo_c3]):
 st.subheader("🖌️ Dibuja un número")
 canvas_result = st_canvas(
     fill_color="white",
-    stroke_width=12,
-    stroke_color="black",
-    background_color="white",
+    stroke_width=15,
+    stroke_color="white",
+    background_color="black",
     height=280,
     width=280,
     drawing_mode="freedraw",
@@ -73,7 +73,7 @@ if st.button("Predecir"):
         
         # Convertir a array e invertir colores
         img_array = np.array(img)
-        img_array = 255 - img_array  # Invertir: fondo negro, número blanco
+        #img_array = 255 - img_array  # Invertir: fondo negro, número blanco
         
         # Mostrar la imagen invertida
         st.image(img_array, caption="Imagen procesada (28x28)", use_container_width=False)
@@ -125,6 +125,7 @@ if st.button("Predecir"):
 
     else:
         st.warning("⚠️ Por favor, dibuja un número antes de predecir.")
+
 
 
 
